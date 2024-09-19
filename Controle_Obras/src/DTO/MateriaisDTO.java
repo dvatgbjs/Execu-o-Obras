@@ -38,14 +38,14 @@ public class MateriaisDTO {
     /**
      * @return the ValorItem
      */
-    public String getValorItem() {
+    public Double getValorItem() {
         return ValorItem;
     }
 
     /**
      * @param ValorItem the ValorItem to set
      */
-    public void setValorItem(String ValorItem) {
+    public void setValorItem(Double ValorItem) {
         this.ValorItem = ValorItem;
     }
 
@@ -62,9 +62,11 @@ public class MateriaisDTO {
     public void setUniMedida(String UniMedida) {
         this.UniMedida = UniMedida;
     }
+
+    
     private String CódigoItem;
     private String NomeItem;
-    private String ValorItem;
+    private Double ValorItem;
     private String UniMedida;
     
 }

@@ -67,6 +67,7 @@ public class TelaListaMateriais extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(NomeItens);
 
+        jButton2.setBackground(new java.awt.Color(102, 204, 255));
         jButton2.setText("Listar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +165,7 @@ private void listarValor(){
                 
                 String CódigoItem = null;
                 String NomeItem = null;
-                String ValorItem = null;
+                Double ValorItem = null;
                 String UniMedida = null;
                 
                 List<MateriaisDTO> lista = materiaisDao.consultarMateriais(CódigoItem, NomeItem, ValorItem, UniMedida);

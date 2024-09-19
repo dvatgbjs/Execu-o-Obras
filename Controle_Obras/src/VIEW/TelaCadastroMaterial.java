@@ -58,6 +58,7 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
 
         jLabel2.setText("Nome Item:");
 
+        CadastroNovoMaterialBtn.setBackground(new java.awt.Color(102, 204, 255));
         CadastroNovoMaterialBtn.setForeground(new java.awt.Color(0, 0, 0));
         CadastroNovoMaterialBtn.setText("Cadastrar");
         CadastroNovoMaterialBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +85,12 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        ValorFormated.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ValorFormatedActionPerformed(evt);
+            }
+        });
+
         UniMedidaBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Unidade", "Metros" }));
         UniMedidaBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,12 +104,6 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(CadastroNovoMaterialBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -121,14 +122,20 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
                                             .addComponent(jLabel2)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel3)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(CancelarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(UniMedidaBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(CodFormated, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(NomeItemTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                             .addComponent(ValorFormated, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(97, 377, Short.MAX_VALUE)
+                .addComponent(CadastroNovoMaterialBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,11 +158,11 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UniMedidaBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(46, 46, 46)
+                .addGap(65, 65, 65)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CadastroNovoMaterialBtn)
                     .addComponent(CancelarBtn))
-                .addGap(91, 91, 91))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,12 +189,17 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
         
         try{
             
-            String CodItem, Nomei, ValorI, UniMedida;
-            
-            CodItem = CodFormated.getText();
-            Nomei = NomeItemTxt.getText();
-            ValorI = ValorFormated.getText();
-            UniMedida = (String) UniMedidaBox.getSelectedItem();
+            String CodItem, Nomei, UniMedida;
+        double ValorI; // Alterado para double
+
+        CodItem = CodFormated.getText();
+        Nomei = NomeItemTxt.getText();
+        
+        // Remover formatação e converter para double
+        String valorText = ValorFormated.getText().replace("R$", "").replace(".", "").replace(",", ".");
+        ValorI = Double.parseDouble(valorText); // Convertendo para double
+        
+        UniMedida = (String) UniMedidaBox.getSelectedItem();
             
             
             
@@ -218,6 +230,10 @@ public class TelaCadastroMaterial extends javax.swing.JFrame {
     private void UniMedidaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UniMedidaBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UniMedidaBoxActionPerformed
+
+    private void ValorFormatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorFormatedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ValorFormatedActionPerformed
 
     /**
      * @param args the command line arguments

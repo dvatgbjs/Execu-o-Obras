@@ -24,7 +24,7 @@ public class CadastroMateriaisDAO {
             
             pstm.setString(1, objmateriaisDto.getCódigoItem());
             pstm.setString(2, objmateriaisDto.getNomeItem());
-            pstm.setString(3, objmateriaisDto.getValorItem());
+            pstm.setDouble(3, objmateriaisDto.getValorItem());
             pstm.setString(4, objmateriaisDto.getUniMedida());
             
             

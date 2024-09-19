@@ -33,7 +33,6 @@ public class TelaMenuView extends javax.swing.JFrame {
         Imagem = new javax.swing.JLabel();
         ObrasBTN = new javax.swing.JButton();
         UsuariosBTN = new javax.swing.JButton();
-        LogradouroBTN2 = new javax.swing.JButton();
         MateriaisBTN1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -66,17 +65,6 @@ public class TelaMenuView extends javax.swing.JFrame {
             }
         });
 
-        LogradouroBTN2.setBackground(new java.awt.Color(102, 204, 255));
-        LogradouroBTN2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        LogradouroBTN2.setForeground(new java.awt.Color(255, 255, 255));
-        LogradouroBTN2.setText("Logradouro");
-        LogradouroBTN2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LogradouroBTN2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogradouroBTN2ActionPerformed(evt);
-            }
-        });
-
         MateriaisBTN1.setBackground(new java.awt.Color(102, 204, 255));
         MateriaisBTN1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         MateriaisBTN1.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,17 +92,16 @@ public class TelaMenuView extends javax.swing.JFrame {
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(0, 213, Short.MAX_VALUE)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 221, Short.MAX_VALUE)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addComponent(Imagem)
                         .addGap(191, 191, 191))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LogradouroBTN2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ObrasBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(107, 107, 107)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(MateriaisBTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(UsuariosBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -126,16 +113,16 @@ public class TelaMenuView extends javax.swing.JFrame {
                 .addGap(72, 72, 72)
                 .addComponent(Imagem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LogradouroBTN2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MateriaisBTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ObrasBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuariosBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addComponent(MateriaisBTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(UsuariosBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addComponent(ObrasBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(164, 164, 164))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,12 +138,6 @@ public class TelaMenuView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LogradouroBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogradouroBTN2ActionPerformed
-        TelaLogradouroView telaLogradouro = new TelaLogradouroView();
-        telaLogradouro.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_LogradouroBTN2ActionPerformed
 
     private void ObrasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObrasBTNActionPerformed
         TelaCadastroObras telaObras = new TelaCadastroObras();
@@ -227,7 +208,6 @@ public class TelaMenuView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Imagem;
-    private javax.swing.JButton LogradouroBTN2;
     private javax.swing.JButton MateriaisBTN1;
     private javax.swing.JButton ObrasBTN;
     private javax.swing.JPanel Panel;

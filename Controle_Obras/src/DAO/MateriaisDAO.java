@@ -21,7 +21,7 @@ public class MateriaisDAO {
     
     List<MateriaisDTO> lista = new ArrayList<>();
         
-        public List<MateriaisDTO> consultarMateriais (String CódigoItem, String NomeItem, String ValorItem, String UniMedida) throws ClassNotFoundException, SQLException{
+        public List<MateriaisDTO> consultarMateriais (String CódigoItem, String NomeItem, Double ValorItem, String UniMedida) throws ClassNotFoundException, SQLException{
             
         conn = new ConexaoBD().conectaBD();
         
@@ -38,7 +38,7 @@ public class MateriaisDAO {
             
             materiaisDto.setCódigoItem(rs.getString("CódigoItem"));
             materiaisDto.setNomeItem(rs.getString("NomeItem"));
-            materiaisDto.setValorItem(rs.getString("ValorItem"));
+            materiaisDto.setValorItem(rs.getDouble("ValorItem"));
             materiaisDto.setUniMedida(rs.getString("UniMedida"));
             
             lista.add(materiaisDto);
